@@ -1,62 +1,41 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego Simple con PixiJS</title>
+    <title>Hola Mundo con p5.js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <style>
         body {
             margin: 0;
-            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
         }
-        canvas {
-            display: block;
+        h1 {
+            font-family: Arial, sans-serif;
+            color: #333;
         }
     </style>
-    <script src="https://unpkg.com/pixi.js@7.x/dist/pixi.min.js"></script>
 </head>
 <body>
     <script>
-        // Inicializar la aplicación de PixiJS
-const app = new PIXI.Application({
-    width: 320,  // Ancho del lienzo
-    height: 240, // Alto del lienzo
-    backgroundColor: 0xAAAAAA // Color de fondo
-});
 
-// Agregar el lienzo al cuerpo del documento
-document.body.appendChild(app.view);
+function setup() {
+    createCanvas(400, 200); // Crea un lienzo de 400x200 píxeles
+    background(220); // Color de fondo
+}
 
-// Crear un círculo
-const circle = new PIXI.Graphics();
-circle.beginFill(0xFF0000); // Color rojo
-circle.drawCircle(0, 0, 20); // Dibuja un círculo con radio 20
-circle.endFill();
-circle.x = app.renderer.width / 2; // Centrar el círculo
-circle.y = app.renderer.height / 2; // Centrar el círculo
-app.stage.addChild(circle);
-
-// Mover el círculo con las teclas de flecha
-document.addEventListener('keydown', (event) => {
-    const speed = 5; // Velocidad de movimiento
-    switch (event.key) {
-        case 'ArrowUp':
-            circle.y -= speed;
-            break;
-        case 'ArrowDown':
-            circle.y += speed;
-            break;
-        case 'ArrowLeft':
-            circle.x -= speed;
-            break;
-        case 'ArrowRight':
-            circle.x += speed;
-            break;
-    }
-});
+function draw() {
+    // El texto se dibuja una vez
+    fill(0); // Color del texto
+    textSize(32); // Tamaño del texto
+    textAlign(CENTER, CENTER); // Alineación del texto
+    text("¡Hola Mundo!", width / 2, height / 2); // Muestra el texto en el centro
+}
 
     </script>
 </body>
 </html>
-
