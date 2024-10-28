@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola Mundo con p5.js</title>
+    <title>Juego Táctil en p5.js</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <style>
         body {
@@ -14,28 +14,12 @@
             height: 100vh;
             background-color: #f0f0f0;
         }
-        h1 {
-            font-family: Arial, sans-serif;
-            color: #333;
+        canvas {
+            border: 1px solid #333;
         }
     </style>
 </head>
 <body>
-    <script>
-
-function setup() {
-    createCanvas(400, 200); // Crea un lienzo de 400x200 píxeles
-    background(220); // Color de fondo
-}
-
-function draw() {
-    // El texto se dibuja una vez
-    fill(0); // Color del texto
-    textSize(32); // Tamaño del texto
-    textAlign(CENTER, CENTER); // Alineación del texto
-    text("¡Hola Mundo!", width / 2, height / 2); // Muestra el texto en el centro
-}
-
-    </script>
+    <script src="sketch.js"></script>
 </body>
 </html>
