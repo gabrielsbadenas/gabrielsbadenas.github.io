@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Simple con PixiJS</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+    <script src="https://unpkg.com/pixi.js@7.x/dist/pixi.min.js"></script>
+</head>
+<body>
+    <script>
+        // Inicializar la aplicación de PixiJS
+const app = new PIXI.Application({
+    width: 320,  // Ancho del lienzo
+    height: 240, // Alto del lienzo
+    backgroundColor: 0xAAAAAA // Color de fondo
+});
+
+// Agregar el lienzo al cuerpo del documento
+document.body.appendChild(app.view);
+
+// Crear un círculo
+const circle = new PIXI.Graphics();
+circle.beginFill(0xFF0000); // Color rojo
+circle.drawCircle(0, 0, 20); // Dibuja un círculo con radio 20
+circle.endFill();
+circle.x = app.renderer.width / 2; // Centrar el círculo
+circle.y = app.renderer.height / 2; // Centrar el círculo
+app.stage.addChild(circle);
+
+// Mover el círculo con las teclas de flecha
+document.addEventListener('keydown', (event) => {
+    const speed = 5; // Velocidad de movimiento
+    switch (event.key) {
+        case 'ArrowUp':
+            circle.y -= speed;
+            break;
+        case 'ArrowDown':
+            circle.y += speed;
+            break;
+        case 'ArrowLeft':
+            circle.x -= speed;
+            break;
+        case 'ArrowRight':
+            circle.x += speed;
+            break;
+    }
+});
+
+    </script>
+</body>
+</html>
+
