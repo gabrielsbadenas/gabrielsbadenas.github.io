@@ -1,13 +1,13 @@
 let circle = {
-    x: 536, // Posición inicial X (centro)
-    y: 536, // Posición inicial Y (centro)
+    x: 320, // Posición inicial X (centro)
+    y: 240, // Posición inicial Y (centro)
     radius: 30, // Radio del círculo
     grayScale: 0 // Nivel de escala de grises
 };
 
 // Setup inicial
 function setup() {
-    createCanvas(1072, 1072); // Crea un canvas de 1072x1072 píxeles
+    createCanvas(640, 480); // Crea un canvas de 640x480 píxeles
     noStroke(); // Sin borde para el círculo
     background(240); // Color de fondo
 }
@@ -23,6 +23,7 @@ function draw() {
 function touchStarted() {
     circle.x = touchX; // Actualiza la posición X
     circle.y = touchY; // Actualiza la posición Y
-    circle.grayScale = Math.floor((map(touchX, 0, width, 0, 15) + map(touchY, 0, height, 0, 15)) / 2) * 16; // Cambia el color en escala de grises
+    // Cambia el color en escala de grises
+    circle.grayScale = Math.floor((map(touchX, 0, width, 0, 15) + map(touchY, 0, height, 0, 15)) / 2) * 16; 
     return false; // Previene el comportamiento por defecto
 }
