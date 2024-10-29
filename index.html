@@ -30,6 +30,7 @@ class Example extends Phaser.Scene
         .setDisplaySize(267,152)
         .setOrigin(0, 0)
         .setPosition(0,304);
+
         const green = this.add.sprite(267,304,'eye')
         .setInteractive()
         .setDisplaySize(267,152)
@@ -43,22 +44,29 @@ class Example extends Phaser.Scene
         .setOrigin(0, 0)
         .setPosition(267,304+152)
         .setTint(0x0000ff);
+
         const yellow = this.add.sprite(267,304,'eye')
         .setInteractive()
         .setDisplaySize(267,152)
         .setOrigin(0, 0)
         .setPosition(0,304+152)
         .setTint(0xffff00);
+
         const charmander = this.add.sprite(267,304,'charmander')
         .setInteractive()
-        .setDisplaySize(128,128)
+//        .setDisplaySize(128,128)
+        .setScale(2)
         .setOrigin(0, 0)
-        .setPosition(267,0)
+        .setPosition(267,0);
+
         const bulbasaur = this.add.sprite(267,304,'bulbasaur')
         .setInteractive()
-        .setDisplaySize(128,128)
+        //.setDisplaySize(128,128)
+        .setScale(2)
         .setOrigin(0, 0)
-        .setPosition(0,152)
+        .setPosition(0,152);
+
+        this.game.renderer.setSmoothing(false);
         sprite.on('pointerdown', function (pointer)
         {
 
