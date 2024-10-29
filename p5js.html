@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Pelea Pokémon</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+    <script>
+        function setup() {
+            createCanvas(534, 608);
+            let buttonHeight = 40;
+            let marginBottom = 20;
+
+            // Posición vertical
+            let yPosition = height - buttonHeight - marginBottom; // Altura del canvas - altura del botón - margen
+
+            // Ancho de cada botón y espacio entre ellos
+            let buttonWidth = 120; // Puedes ajustar el ancho según sea necesario
+            let spaceBetween = 10; // Espacio entre botones
+
+            // Posiciones horizontales
+            let xPosition1 = (width / 2) - (2 * (buttonWidth + spaceBetween) + buttonWidth / 2);
+            let xPosition2 = xPosition1 + buttonWidth + spaceBetween;
+            let xPosition3 = xPosition2 + buttonWidth + spaceBetween;
+            let xPosition4 = xPosition3 + buttonWidth + spaceBetween;
+
+            // Crear botones
+            createButton('Ataque').position(xPosition1, yPosition);
+            createButton('Defender').position(xPosition2, yPosition);
+            createButton('Usar Objeto').position(xPosition3, yPosition);
+            createButton('Huir').position(xPosition4, yPosition);
+        }
+
+        function draw() {
+            background(220);
+        }
+    </script>
+</body>
+</html>

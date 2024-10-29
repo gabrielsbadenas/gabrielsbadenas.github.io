@@ -3,23 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego Táctil en p5.js</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>Juego Básico con Phaser.js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.55.2/phaser.min.js"></script>
     <style>
         body {
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        canvas {
-            border: 1px solid #333;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
-    <script src="sketch.js"></script>
+<script>
+class Example extends Phaser.Scene
+{
+    preload ()
+    {
+        this.load.image('eye', 'https://yt3.ggpht.com/ytc/AIdro_luqAPtDiT9TFrJyHBQBdxmUe6wTAtFk7EWTJBo-YsqUZuPBbClxP5vei2Vp6-6W7r0DA=s88-c-k-c0x00ffffff-no-rj');
+    }
+
+    create ()
+    {
+        const sprite = this.add.sprite(0, 300, 'eye').setInteractive();
+        sprite.width
+        sprite.on('pointerdown', function (pointer)
+        {
+
+            this.setTint(0xff0000);
+
+        });
+
+        sprite.on('pointerout', function (pointer)
+        {
+
+            this.clearTint();
+
+        });
+
+        sprite.on('pointerup', function (pointer)
+        {
+
+            this.clearTint();
+
+        });
+    }
+}
+
+const config = {
+    width: 534,
+    height: 608,
+    type: Phaser.AUTO,
+    parent: 'phaser-example',
+    scene: Example
+};
+
+const game = new Phaser.Game(config);
+</script>
 </body>
 </html>
+
