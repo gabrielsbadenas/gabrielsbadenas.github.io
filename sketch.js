@@ -1,4 +1,4 @@
-let canvasWidth = 518;  // Ancho inicial del canvas
+let canvasWidth = 534;  // Ancho inicial del canvas
 let canvasHeight = 608; // Alto inicial del canvas
 
 function setup() {
