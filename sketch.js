@@ -1,6 +1,6 @@
 let circle = {
-    x: 320, // Posición inicial X (centro)
-    y: 240, // Posición inicial Y (centro)
+    x: 100, // Posición inicial X (centro)
+    y: 100, // Posición inicial Y (centro)
     radius: 30, // Radio del círculo
     grayScale: 0 // Nivel de escala de grises
 };
