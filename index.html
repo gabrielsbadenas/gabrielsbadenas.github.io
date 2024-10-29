@@ -19,6 +19,8 @@ class Example extends Phaser.Scene
     preload ()
     {
         this.load.image('eye', 'https://yt3.ggpht.com/ytc/AIdro_luqAPtDiT9TFrJyHBQBdxmUe6wTAtFk7EWTJBo-YsqUZuPBbClxP5vei2Vp6-6W7r0DA=s88-c-k-c0x00ffffff-no-rj');
+        this.load.image('bulbasaur','https://pbs.twimg.com/media/GbB6zPOXUAAzxze?format=webp&name=tiny');
+        this.load.image('charmander','https://pbs.twimg.com/media/GbB6zPQXEAA6UmM?format=webp&name=tiny')
     }
 
     create ()
@@ -47,6 +49,16 @@ class Example extends Phaser.Scene
         .setOrigin(0, 0)
         .setPosition(0,304+152)
         .setTint(0xffff00);
+        const charmander = this.add.sprite(267,304,'charmander')
+        .setInteractive()
+        .setDisplaySize(128,128)
+        .setOrigin(0, 0)
+        .setPosition(267,0)
+        const bulbasaur = this.add.sprite(267,304,'bulbasaur')
+        .setInteractive()
+        .setDisplaySize(128,128)
+        .setOrigin(0, 0)
+        .setPosition(0,152)
         sprite.on('pointerdown', function (pointer)
         {
 
