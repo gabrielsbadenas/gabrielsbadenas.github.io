@@ -1,5 +1,5 @@
 let canvasWidth = 500;  // Ancho inicial del canvas
-let canvasHeight = 600; // Alto inicial del canvas
+let canvasHeight = 608; // Alto inicial del canvas
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
@@ -16,6 +16,6 @@ function draw() {
 function mousePressed() {
   // Aumentar el tamaño del canvas en 1 píxel
   canvasWidth++;
-  canvasHeight++;
+  //canvasHeight++;
   resizeCanvas(canvasWidth, canvasHeight);
 }
