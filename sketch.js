@@ -1,29 +1,21 @@
-let circle = {
-    x: 100, // Posición inicial X (centro)
-    y: 100, // Posición inicial Y (centro)
-    radius: 30, // Radio del círculo
-    grayScale: 0 // Nivel de escala de grises
-};
+let canvasWidth = 500;  // Ancho inicial del canvas
+let canvasHeight = 600; // Alto inicial del canvas
 
-// Setup inicial
 function setup() {
-    createCanvas(500, 600); // Crea un canvas de 640x480 píxeles
-    noStroke(); // Sin borde para el círculo
-    background(240); // Color de fondo
+  createCanvas(canvasWidth, canvasHeight);
+  textAlign(CENTER, CENTER);
 }
 
-// Dibuja el círculo en la posición actual
 function draw() {
-    background(240); // Limpia el fondo en cada frame
-    fill(circle.grayScale); // Color del círculo en escala de grises
-    ellipse(circle.x, circle.y, circle.radius * 2); // Dibuja el círculo
+  background(220);
+  fill(0);
+  textSize(24);
+  text(`Tamaño del canvas: ${canvasWidth} x ${canvasHeight}`, width / 2, height / 2);
 }
 
-// Maneja el evento táctil
-function touchStarted() {
-    circle.x = touchX; // Actualiza la posición X
-    circle.y = touchY; // Actualiza la posición Y
-    // Cambia el color en escala de grises
-    circle.grayScale = Math.floor((map(touchX, 0, width, 0, 15) + map(touchY, 0, height, 0, 15)) / 2) * 16; 
-    return false; // Previene el comportamiento por defecto
+function mousePressed() {
+  // Aumentar el tamaño del canvas en 1 píxel
+  canvasWidth++;
+  canvasHeight++;
+  resizeCanvas(canvasWidth, canvasHeight);
 }
