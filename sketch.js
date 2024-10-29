@@ -7,7 +7,7 @@ let circle = {
 
 // Setup inicial
 function setup() {
-    createCanvas(640, 480); // Crea un canvas de 640x480 píxeles
+    createCanvas(500, 500); // Crea un canvas de 640x480 píxeles
     noStroke(); // Sin borde para el círculo
     background(240); // Color de fondo
 }
